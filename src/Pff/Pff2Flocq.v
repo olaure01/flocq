@@ -899,9 +899,8 @@ replace (--emin)%Z with emin in Hft4'' by lia.
 assert (Hs:(s =(Z.abs_nat prec - Nat.div2 (Z.abs_nat prec))%nat)).
 unfold s; rewrite inj_minus.
 assert (TT: (Z.div2 prec = Nat.div2 (Z.abs_nat prec))%Z).
-rewrite Nat.div2_div, Z.div2_div, div_Zdiv; simpl.
+rewrite Nat.div2_div, Z.div2_div, Nat2Z.inj_div; simpl.
 rewrite inj_abs; lia.
-lia.
 rewrite <- TT.
 rewrite inj_abs; try lia.
 rewrite Z.max_r; try lia.
